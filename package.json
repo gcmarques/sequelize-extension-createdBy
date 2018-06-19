@@ -1,7 +1,7 @@
 {
-  "name": "sequelize-extension-createdby",
+  "name": "sequelize-extension-view",
   "version": "0.0.1",
-  "description": "This extension will automatically set createdBy to options.user.id when an instance is created.",
+  "description": "This extension allows the creation of virtual table views",
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint ./src --ext .js; ./node_modules/.bin/eslint ./tests -c ./tests/.eslintrc --ext .js",
@@ -11,10 +11,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gcmarques/sequelize-extension-createdBy.git"
+    "url": "https://github.com/gcmarques/sequelize-extension-view.git"
   },
   "author": "Gabriel Chagas Marques",
-  "dependencies": {},
+  "dependencies": {
+    "inflection": "^1.12.0",
+    "lodash": "^4.17.10"
+  },
   "keywords": [
     "sequelize",
     "sequelize extension",
@@ -38,10 +41,10 @@
     "mocha-jenkins-reporter": "^0.3.10",
     "mysql2": "^1.5.2",
     "nyc": "^11.4.1",
-    "sequelize": "^4.33.3",
+    "sequelize": "^4.37.10",
+    "sequelize-extension": "<1.0.0",
     "sinon": "^4.2.2",
-    "sinon-chai": "^2.14.0",
-    "sequelize-extension": "<1.0.0"
+    "sinon-chai": "^2.14.0"
   },
   "nyc": {
     "all": true,
