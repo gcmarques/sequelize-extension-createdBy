@@ -1,7 +1,7 @@
 {
-  "name": "sequelize-extension-base",
+  "name": "sequelize-extension-createdBy",
   "version": "0.0.1",
-  "description": "This module provides an interface to extend sequelize models",
+  "description": "This extension will automatically set createdBy to options.user.id when an instance is created.",
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint ./src --ext .js; ./node_modules/.bin/eslint ./tests -c ./tests/.eslintrc --ext .js",
