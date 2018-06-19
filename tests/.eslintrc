@@ -1,0 +1,19 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "no-underscore-dangle": 0,
+    "no-param-reassign": 0,
+    "consistent-return": 0,
+    "no-unused-expressions": 0,
+    "no-shadow": 0,
+    "import/no-extraneous-dependencies": ["error", { dependencies: true, devDependencies: true }]
+  },
+  "env": {
+    "mocha": true
+  },
+  "globals": {
+    "expect": true,
+    "assert": true,
+    "sinon": true
+  }
+}

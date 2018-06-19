@@ -1,0 +1,45 @@
+sudo: false
+dist: trusty
+
+language: node_js
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - $HOME/.npm
+
+env:
+  global:
+    # mysql info
+    - SEQ_MYSQL_DB=sequelize_test
+    - SEQ_MYSQL_USER=sequelize_test
+    - SEQ_MYSQL_PW=sequelize_test
+    - SEQ_MYSQL_HOST=127.0.0.1
+    - SEQ_MYSQL_PORT=8999
+
+before_script:
+  # mount ramdisk
+  - "if [ $MYSQL_VER ]; then sudo mkdir /mnt/sequelize-mysql-ramdisk; fi"
+  - "if [ $MYSQL_VER ]; then sudo mount -t ramfs tmpfs /mnt/sequelize-mysql-ramdisk; fi"
+
+  # setup docker
+  - "if [ $MYSQL_VER ]; then docker-compose up -d ${MYSQL_VER}; fi"
+  - "if [ $MYSQL_VER ]; then docker run --link ${MYSQL_VER}:db -e CHECK_PORT=3306 -e CHECK_HOST=db --net sequelizeextensioncreatedby_default giorgos/takis; fi"
+
+script:
+  - 'if [ "$INSTALL_MODULE" ]; then yarn add ${INSTALL_MODULE}; fi'
+  - yarn run lint
+  - "if [ $COVERAGE ]; then yarn run cover && bash <(curl -s https://codecov.io/bash) -f coverage/lcov.info; else yarn run test; fi"
+
+jobs:
+  include:
+    - stage: test
+      node_js: '9'
+      sudo: required
+      env: MYSQL_VER=mysql-57 DIALECT=mysql COVERAGE=true
+
+stages:
+  - test
