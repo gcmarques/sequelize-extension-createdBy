@@ -1,5 +1,5 @@
 {
-  "name": "sequelize-extension-createdBy",
+  "name": "sequelize-extension-createdby",
   "version": "0.0.1",
   "description": "This extension will automatically set createdBy to options.user.id when an instance is created.",
   "main": "index.js",
