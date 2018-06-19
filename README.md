@@ -13,15 +13,29 @@ $ npm install --save sequelize-extension-createdBy
 
 This library uses [sequelize-extension](https://www.npmjs.com/package/sequelize-extension) to extend sequelize models. If a model has a `createdBy` field, this extension will automatically set `createdBy` to `options.user.id` when an instance is created.
 ```javascript
-const task1 = await db.task.create({...}, { user: { id: 2 } });
+const Sequelize = require('sequelize');
+const extendSequelize = require('sequelize-extension');
+const enhanceCreatedBy = require('sequelize-extension-createdBy');
+
+const sequelize = new Sequelize(...);
+
+const Task = sequelize.define('task', {
+  name: Sequelize.STRING(255),
+});
+
+extendSequelize([Task], {
+  createdBy: enhanceCreatedBy(),
+});
+
+const task1 = await Task.create({...}, { user: { id: 2 } });
 console.log(task1.createdBy);
 // 2
 
-const task2 = await db.task.create({...});
+const task2 = await Task.create({...});
 console.log(task2.createdBy);
 // 1 <- default userId
 
-await db.task.bulkCreate([
+await Task.bulkCreate([
   {...},
   {...},
 ], { user: { id: 3 } });
