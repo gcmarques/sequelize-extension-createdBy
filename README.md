@@ -1,4 +1,4 @@
-# sequelize-extension
+# sequelize-extension-createdBy
 
 [![Build Status](https://travis-ci.org/gcmarques/sequelize-extension-createdBy.svg?branch=master)](https://travis-ci.org/gcmarques/sequelize-extension-createdBy)
 [![codecov](https://codecov.io/gh/gcmarques/sequelize-extension-createdBy/branch/master/graph/badge.svg)](https://codecov.io/gh/gcmarques/sequelize-extension-createdBy)
@@ -44,6 +44,6 @@ await Task.bulkCreate([
 
 ### Other Extensions
 [sequelize-extension-tracking](https://www.npmjs.com/package/sequelize-extension-tracking) - Automatically track sequelize instance updates.\
-[sequelize-extension-updatedBy](https://www.npmjs.com/package/sequelize-extension-updatedBy) - Automatically set updatedBy with `options.user.id` option.\
-[sequelize-extension-deletedBy](https://www.npmjs.com/package/sequelize-extension-deletedBy) - Automatically set deletedBy with `options.user.id` option.\
+[sequelize-extension-updatedBy](https://www.npmjs.com/package/sequelize-extension-updatedBy) - Automatically set `updatedBy` with `options.user.id` option.\
+[sequelize-extension-deletedBy](https://www.npmjs.com/package/sequelize-extension-deletedBy) - Automatically set `deletedBy` with `options.user.id` option.\
 [sequelize-extension-graphql](https://www.npmjs.com/package/sequelize-extension-graphql) - Create GraphQL schema based on sequelize models.
