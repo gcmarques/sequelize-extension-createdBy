@@ -4,8 +4,6 @@
 [![codecov](https://codecov.io/gh/gcmarques/sequelize-extension-createdBy/branch/master/graph/badge.svg)](https://codecov.io/gh/gcmarques/sequelize-extension-createdBy)
 ![GitHub license](https://img.shields.io/github/license/gcmarques/sequelize-extension-createdBy.svg)
 
-This module provides pre-built extensions and an interface to extend sequelize models.
-
 ### Installation
 ```bash
 $ npm install --save sequelize-extension-createdBy
