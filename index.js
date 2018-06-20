@@ -1,3 +1,3 @@
-const enhanceView = require('./enhancers/view');
+const enhanceCreatedBy = require('./enhancers/createdBy');
 
-module.exports = enhanceView;
+module.exports = enhanceCreatedBy;
