@@ -14,6 +14,6 @@ function enhanceCreatedBy() {
         });
       }
     });
-  }
+  };
 }
 module.exports = enhanceCreatedBy;

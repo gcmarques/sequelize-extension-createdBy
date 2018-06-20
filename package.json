@@ -1,6 +1,6 @@
 {
   "name": "sequelize-extension-createdby",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This extension will automatically set createdBy to options.user.id when an instance is created.",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,9 @@
     "url": "https://github.com/gcmarques/sequelize-extension-createdBy.git"
   },
   "author": "Gabriel Chagas Marques",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
   "keywords": [
     "sequelize",
     "sequelize extension",
@@ -39,9 +41,9 @@
     "mysql2": "^1.5.2",
     "nyc": "^11.4.1",
     "sequelize": "^4.33.3",
+    "sequelize-extension": "<1.0.0",
     "sinon": "^4.2.2",
-    "sinon-chai": "^2.14.0",
-    "sequelize-extension": "<1.0.0"
+    "sinon-chai": "^2.14.0"
   },
   "nyc": {
     "all": true,
