@@ -40,7 +40,7 @@
     "mocha-jenkins-reporter": "^0.3.10",
     "mysql2": "^1.5.2",
     "nyc": "^11.4.1",
-    "sequelize": "^4.33.3",
+    "sequelize": "^5.15.1",
     "sequelize-extension": "<1.0.0",
     "sinon": "^4.2.2",
     "sinon-chai": "^2.14.0"
